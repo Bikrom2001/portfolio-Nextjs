@@ -13,7 +13,7 @@ export default function Credentials() {
   const list = certifications.filter((c) => group === "All" || c.group === group);
 
   return (
-    <section id="credentials" aria-labelledby="credentials-title" className="relative py-20 md:py-28">
+    <section id="credentials" aria-labelledby="credentials-title" className="relative overflow-hidden py-20 md:py-28">
       <div aria-hidden="true" className="bg-grid mask-fade absolute inset-0 -z-10 opacity-70" />
       <div className="wrap">
         <SectionHeader
@@ -26,17 +26,17 @@ export default function Credentials() {
         {/* Education timeline */}
         <ol className="relative grid gap-4 md:grid-cols-2">
           {education.map((e) => (
-            <li key={e.degree} className="reveal glass glass-hover relative overflow-hidden p-6 sm:p-7">
+            <li key={e.degree} className="reveal glass glass-hover relative overflow-hidden p-5 sm:p-7">
               <div aria-hidden="true" className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-p-pink blur-2xl" />
-              <div className="relative flex items-start justify-between gap-4">
-                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-p-violet text-accent-3">
+              <div className="relative flex items-start justify-between gap-3">
+                <span className="grid h-12 w-12 sm:h-14 sm:w-14 shrink-0 place-items-center rounded-2xl bg-p-violet text-accent-3">
                   <GraduationCap className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <span className="rounded-full bg-p-peach px-3 py-1 text-[0.78rem] font-semibold text-fg-soft">{e.years}</span>
+                <span className="rounded-full bg-p-peach px-2.5 sm:px-3 py-1 text-[0.72rem] sm:text-[0.78rem] font-semibold text-fg-soft">{e.years}</span>
               </div>
-              <h3 className="relative mt-5 font-display text-xl font-bold leading-snug text-fg">{e.degree}</h3>
-              <p className="relative mt-1 text-[0.95rem] text-muted">{e.school}</p>
-              <p className="relative mt-4 inline-flex items-center gap-2 rounded-full bg-p-mint px-3 py-1 text-[0.85rem] font-semibold text-success">
+              <h3 className="relative mt-4 sm:mt-5 font-display text-lg sm:text-xl font-bold leading-snug text-fg break-words">{e.degree}</h3>
+              <p className="relative mt-1 text-[0.88rem] sm:text-[0.95rem] text-muted">{e.school}</p>
+              <p className="relative mt-3 sm:mt-4 inline-flex items-center gap-2 rounded-full bg-p-mint px-2.5 sm:px-3 py-1 text-[0.8rem] sm:text-[0.85rem] font-semibold text-success">
                 {e.result}
               </p>
             </li>
@@ -44,23 +44,23 @@ export default function Credentials() {
         </ol>
 
         {/* Certifications */}
-        <div className="mt-16">
-          <div className="reveal flex flex-wrap items-end justify-between gap-4">
+        <div className="mt-14 sm:mt-16">
+          <div className="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <h3 className="flex items-center gap-2.5 font-display text-xl font-bold text-fg">
+              <h3 className="flex items-center gap-2.5 font-display text-lg sm:text-xl font-bold text-fg">
                 <Award className="h-5 w-5 text-accent-2" aria-hidden="true" />
                 Certifications
               </h3>
-              <p className="mt-1 text-[0.95rem] text-muted">{certifications.length} certificates and training programs.</p>
+              <p className="mt-1 text-[0.88rem] sm:text-[0.95rem] text-muted">{certifications.length} certificates and training programs.</p>
             </div>
-            <div role="group" aria-label="Filter certifications" className="glass flex flex-wrap gap-1 !rounded-full p-1">
+            <div role="group" aria-label="Filter certifications" className="glass flex flex-wrap gap-1 !rounded-full p-1 self-start sm:self-auto">
               {groups.map((g) => (
                 <button
                   key={g}
                   type="button"
                   aria-pressed={group === g}
                   onClick={() => setGroup(g)}
-                  className={`relative isolate rounded-full px-3.5 py-1.5 text-[0.83rem] font-medium transition-colors ${group === g ? "text-white" : "text-muted hover:text-fg"}`}
+                  className={`relative isolate rounded-full px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-xs sm:text-[0.83rem] font-medium transition-colors ${group === g ? "text-white" : "text-muted hover:text-fg"}`}
                 >
                   {group === g && <motion.span layoutId="cert-filter" className="absolute inset-0 -z-10 rounded-full bg-gradient-brand" />}
                   {g}

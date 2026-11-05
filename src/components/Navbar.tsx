@@ -91,11 +91,13 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <motion.div
-        style={{ scaleX: progress }}
-        className="mx-auto mt-1.5 h-[3px] max-w-[68rem] origin-left rounded-full bg-gradient-brand"
-        aria-hidden="true"
-      />
+      <div className="mx-auto mt-1.5 h-[3px] w-full max-w-[68rem] overflow-hidden rounded-full">
+        <motion.div
+          style={{ scaleX: progress }}
+          className="h-full w-full origin-left bg-gradient-brand"
+          aria-hidden="true"
+        />
+      </div>
 
       <AnimatePresence>
         {open && (

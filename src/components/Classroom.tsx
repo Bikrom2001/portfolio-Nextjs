@@ -550,7 +550,7 @@ export default function Classroom() {
       {/* Lightbox / Video Modal */}
       <AnimatePresence>
         {selectedMoment && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             {/* Modal Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -565,7 +565,7 @@ export default function Classroom() {
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="relative z-10 w-full max-w-2xl overflow-hidden rounded-3xl border border-border bg-surface p-6 shadow-2xl"
+              className="relative z-10 w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-3xl border border-border bg-surface p-4 sm:p-6 shadow-2xl"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>

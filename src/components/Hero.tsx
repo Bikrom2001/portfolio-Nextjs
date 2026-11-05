@@ -62,7 +62,7 @@ function PhotoCard() {
 
 export default function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-x-clip pt-28 pb-14 md:pt-32 md:pb-20">
+    <section id="top" className="relative isolate overflow-hidden pt-28 pb-14 md:pt-32 md:pb-20">
       {/* Drifting pastel blobs */}
       <div aria-hidden="true" className="drift absolute -left-24 top-10 -z-10 h-80 w-80 rounded-full bg-[var(--blob-1)] blur-3xl" />
       <div aria-hidden="true" style={d(3)} className="drift absolute right-[-6rem] top-40 -z-10 h-96 w-96 rounded-full bg-[var(--blob-2)] blur-3xl" />

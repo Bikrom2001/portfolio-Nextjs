@@ -21,7 +21,7 @@ export default function Experience() {
   const active = roles.find((r) => getRoleId(r) === activeId) ?? roles[0];
 
   return (
-    <section id="experience" aria-labelledby="experience-title" className="relative py-20 md:py-28">
+    <section id="experience" aria-labelledby="experience-title" className="relative overflow-hidden py-20 md:py-28">
       <div aria-hidden="true" className="bg-grid mask-fade absolute inset-0 -z-10 opacity-70" />
       <div className="wrap">
         <SectionHeader

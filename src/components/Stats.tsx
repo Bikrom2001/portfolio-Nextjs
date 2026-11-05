@@ -44,7 +44,7 @@ function CountUp({ to, suffix }: { to: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section aria-label="Highlights" className="relative pb-6">
+    <section aria-label="Highlights" className="relative overflow-hidden pb-6">
       <div className="wrap">
         <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {stats.map((s, i) => {

@@ -56,7 +56,7 @@ const mocks = [JobPortalMock, AdmissionMock];
 
 export default function Projects() {
   return (
-    <section id="projects" aria-labelledby="projects-title" className="py-20 md:py-28">
+    <section id="projects" aria-labelledby="projects-title" className="relative overflow-hidden py-20 md:py-28">
       <div className="wrap">
         <SectionHeader
           id="projects-title"

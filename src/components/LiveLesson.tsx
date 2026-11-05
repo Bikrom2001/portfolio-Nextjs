@@ -19,23 +19,27 @@ const DEFAULT_CSS = `body {
   place-items: center;
   font-family: system-ui, sans-serif;
   background: #fbf8ff;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .card {
   background: #fff;
-  padding: 22px 26px;
-  border-radius: 22px;
+  padding: 16px 18px;
+  border-radius: 18px;
   text-align: center;
+  max-width: 100%;
   box-shadow: 0 8px 24px rgba(30, 41, 90, .15);
 }
-h1 { margin: 0 0 6px; color: #1e1433; }
-p  { margin: 0 0 16px; color: #5d6680; }
+h1 { margin: 0 0 4px; font-size: 1.2rem; color: #1e1433; }
+p  { margin: 0 0 12px; font-size: 0.82rem; color: #5d6680; }
 button {
   background: linear-gradient(120deg, #8b5cf6, #ec4899);
   color: #fff;
   border: 0;
-  padding: 10px 18px;
+  padding: 8px 16px;
   border-radius: 999px;
   font-weight: 600;
+  font-size: 0.85rem;
   cursor: pointer;
 }`;
 
@@ -105,9 +109,9 @@ export default function LiveLesson() {
   };
 
   return (
-    <div className="overflow-hidden rounded-[2rem] bg-code text-code-text shadow-[var(--shadow-lg)] ring-1 ring-code-line">
+    <div className="w-full overflow-hidden rounded-2xl sm:rounded-[2rem] bg-code text-code-text shadow-[var(--shadow-lg)] ring-1 ring-code-line">
       {/* Title bar */}
-      <div className="flex items-center justify-between gap-3 border-b border-code-line px-4 py-2.5">
+      <div className="flex items-center justify-between gap-2 border-b border-code-line px-3 sm:px-4 py-2 sm:py-2.5">
         <div role="tablist" aria-label="Lesson files" className="flex gap-1">
           {FILES.map((f) => (
             <button
@@ -119,7 +123,7 @@ export default function LiveLesson() {
                 if (typing) finishTyping();
                 setActive(f.key);
               }}
-              className={`rounded-md px-3 py-1.5 font-mono text-[0.78rem] transition-colors ${
+              className={`rounded-md px-2.5 sm:px-3 py-1 sm:py-1.5 font-mono text-[0.72rem] sm:text-[0.78rem] transition-colors ${
                 active === f.key ? "bg-code-line text-code-text" : "text-code-text/55 hover:text-code-text"
               }`}
             >
@@ -130,16 +134,16 @@ export default function LiveLesson() {
         <button
           type="button"
           onClick={reset}
-          className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[0.78rem] text-code-text/60 transition-colors hover:text-code-text"
+          className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[0.72rem] sm:text-[0.78rem] text-code-text/60 transition-colors hover:text-code-text"
         >
-          <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
+          <RotateCcw className="h-3 w-3 sm:h-3.5 sm:w-3.5" aria-hidden="true" />
           Reset
         </button>
       </div>
 
       {/* Editor */}
-      <div className="relative flex h-56 font-mono text-[0.8rem] leading-[1.6rem] sm:h-60">
-        <div aria-hidden="true" className="select-none overflow-hidden px-3 pt-3 text-right text-code-text/25">
+      <div className="relative flex h-48 sm:h-60 font-mono text-xs sm:text-[0.8rem] leading-[1.5rem] sm:leading-[1.6rem]">
+        <div aria-hidden="true" className="select-none overflow-hidden px-2 sm:px-3 pt-3 text-right text-code-text/25">
           {Array.from({ length: Math.max(lineCount, 1) }, (_, i) => (
             <div key={i}>{i + 1}</div>
           ))}
@@ -171,7 +175,7 @@ export default function LiveLesson() {
 
       {/* Preview */}
       <div className="border-t border-code-line bg-surface-2 p-2">
-        <div className="flex items-center justify-between px-2 pb-1.5 pt-0.5 text-[0.75rem] text-muted">
+        <div className="flex items-center justify-between px-2 pb-1.5 pt-0.5 text-[0.72rem] sm:text-[0.75rem] text-muted">
           <span className="inline-flex items-center gap-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-success" aria-hidden="true" />
             Live preview
@@ -182,7 +186,7 @@ export default function LiveLesson() {
           title="Live preview of the lesson code"
           srcDoc={srcDoc}
           sandbox="allow-scripts"
-          className="h-44 w-full rounded-xl border border-border bg-surface-2 sm:h-48"
+          className="h-36 sm:h-44 w-full rounded-xl border border-border bg-surface-2"
         />
       </div>
     </div>

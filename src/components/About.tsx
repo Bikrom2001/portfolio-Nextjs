@@ -26,7 +26,7 @@ const services = [
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="py-20 md:py-28">
+    <section id="about" aria-labelledby="about-title" className="relative overflow-hidden py-20 md:py-28">
       <div className="wrap">
         <SectionHeader id="about-title" tag="About me" title="Developer by craft, teacher by choice" subtitle="A short introduction to who I am and the three things I do best." />
 
