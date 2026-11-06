@@ -44,6 +44,20 @@ type MomentItem = {
 
 const MOMENTS: MomentItem[] = [
   {
+    id: "m-nsda-assessment",
+    category: "dtti-nsda",
+    tag: "NSDA Assessment Day",
+    tagIcon: "award",
+    indicator: "1 Photo",
+    title: "National Skill Competency Assessment (CBT&A)",
+    institute: "National Skill Development Authority (NSDA)",
+    level: "Level 4",
+    batch: "Assessor Session",
+    date: "2025",
+    image: "/classroom/nsda-assessment-priyanka.jpg",
+    color: "from-amber-600/40 via-orange-600/30 to-surface-2",
+  },
+  {
     id: "m-1",
     category: "infosystem",
     tag: "Certification Day",
@@ -97,6 +111,61 @@ const MOMENTS: MomentItem[] = [
     color: "from-indigo-600/40 via-purple-600/30 to-surface-2",
   },
   {
+    id: "m-bitm",
+    category: "seip-basis",
+    tag: "BITM – SEIP",
+    tagIcon: "users",
+    indicator: "1/2 Photos",
+    title: "Web Application Development",
+    institute: "BITM Trainer",
+    batch: "BITM-SEIP-Batch-13, 14",
+    date: "2024 – Present",
+    desc: "Hands-on web application development sessions, live coding labs, and project evaluations with trainees of BITM-SEIP Batch 13 and 14.",
+    image: "/classroom/bitm-seip-batch-1.jpg",
+    photos: [
+      "/classroom/bitm-seip-batch-1.jpg",
+      "/classroom/bitm-seip-batch-2.jpg",
+    ],
+    color: "from-emerald-600/40 via-teal-600/30 to-surface-2",
+  },
+  {
+    id: "m-seip-basis",
+    category: "seip-basis",
+    tag: "SICIP – BASIS",
+    tagIcon: "users",
+    indicator: "1/2 Photos",
+    title: "Web Application Development with PHP",
+    institute: "SICIP BASIS Trainer · SEIP Project",
+    batch: "SEIP-BASIS Batch-08, 09",
+    date: "2022 – 2023",
+    desc: "Hands-on web application development with PHP, MySQL, HTML5, CSS3, JavaScript, and Bootstrap under the SEIP-BASIS project.",
+    image: "/classroom/basis-seip-batch-1.jpg",
+    photos: [
+      "/classroom/basis-seip-batch-1.jpg",
+      "/classroom/basis-seip-batch-2.jpg",
+    ],
+    color: "from-amber-600/35 via-rose-600/25 to-surface-2",
+  },
+  {
+    id: "m-seip-bootcamp",
+    category: "seip-basis",
+    tag: "SEIP Bootcamp",
+    tagIcon: "users",
+    indicator: "1/3 Photos",
+    title: "Web Design & Foundation Bootcamp",
+    institute: "BASIS – SEIP Project",
+    batch: "SEIP Batch 12",
+    date: "2023",
+    desc: "Intensive web design and foundation bootcamp sessions, lab demonstrations, and student project showcases at BASIS.",
+    image: "/classroom/seip-bootcamp-2.jpg",
+    photos: [
+      "/classroom/seip-bootcamp-2.jpg",
+      "/classroom/seip-bootcamp-1.jpg",
+      "/classroom/seip-bootcamp-3.jpg",
+    ],
+    color: "from-blue-600/35 via-teal-600/25 to-surface-2",
+  },
+  {
     id: "m-wit",
     category: "dtti-nsda",
     tag: "NSDA Certified",
@@ -139,34 +208,6 @@ const MOMENTS: MomentItem[] = [
     isLogo: true,
     color: "from-amber-600/30 via-orange-600/20 to-surface-2",
   },
-  {
-    id: "m-5",
-    category: "dtti-nsda",
-    tag: "NSDA Assessment Day",
-    tagIcon: "award",
-    indicator: "1 Photo",
-    title: "National Skill Competency Assessment (CBT&A)",
-    institute: "National Skill Development Authority (NSDA)",
-    level: "Level 4",
-    batch: "Assessor Session",
-    date: "2025",
-    image: "/classroom/nsda-assessment-priyanka.jpg",
-    color: "from-amber-600/40 via-orange-600/30 to-surface-2",
-  },
-  {
-    id: "m-6",
-    category: "seip-basis",
-    tag: "SEIP Project",
-    tagIcon: "grad",
-    indicator: "SEIP Logo",
-    title: "Web Design & Foundation Bootcamp",
-    institute: "BASIS – SEIP Project",
-    batch: "SEIP Batch 12",
-    date: "2023",
-    image: "/seip-logo.webp",
-    isLogo: true,
-    color: "from-emerald-600/30 via-teal-600/20 to-surface-2",
-  },
 ];
 
 function matchesFilter(item: MomentItem, filterId: BatchCategory): boolean {
@@ -176,6 +217,14 @@ function matchesFilter(item: MomentItem, filterId: BatchCategory): boolean {
     return (
       item.category === "infosystem" ||
       item.institute.toLowerCase().includes("infosystem")
+    );
+  }
+  if (filterId === "seip-basis") {
+    return (
+      item.category === "seip-basis" ||
+      item.institute.toLowerCase().includes("basis") ||
+      item.institute.toLowerCase().includes("bitm") ||
+      item.institute.toLowerCase().includes("seip")
     );
   }
   return item.category === filterId;
@@ -482,7 +531,7 @@ export default function Classroom() {
         <div className="mb-10 max-w-3xl">
           <div className="mb-3 flex items-center gap-2">
             <span className="font-mono text-xs font-bold tracking-widest text-accent uppercase">
-              06 —— CLASSROOM & MENTORSHIP
+              05 —— CLASSROOM & MENTORSHIP
             </span>
           </div>
 

@@ -7,9 +7,9 @@ import { certifications, engagements, experience } from "@/data/cv";
 
 const stats = [
   { value: 12, suffix: "+", label: "Years in IT", note: "Since 2014", icon: Briefcase },
-  { value: experience.filter((r) => r.track === "teaching").length, suffix: "", label: "Teaching & assessment roles", note: "Since 2019", icon: Presentation },
-  { value: certifications.length, suffix: "", label: "Certifications", note: "Incl. 3 from NSDA", icon: Award },
-  { value: engagements.length, suffix: "", label: "Institutes", note: "As resource person", icon: GraduationCap },
+  { value: experience.filter((r) => r.track === "teaching").length, suffix: "+", label: "Teaching & assessment roles", note: "Since 2019", icon: Presentation },
+  { value: certifications.length, suffix: "+", label: "Certifications", note: "Incl. 3 from NSDA", icon: Award },
+  { value: engagements.length, suffix: "+", label: "Institutes", note: "As resource person", icon: GraduationCap },
 ];
 
 /** Shows the final number on first render (so it is never empty), then counts up when scrolled into view. */
@@ -56,7 +56,7 @@ export default function Stats() {
                 className="reveal glass glass-hover flex items-center gap-4 p-4 sm:p-6"
               >
                 <span className={`hidden h-14 w-14 shrink-0 place-items-center rounded-2xl ${tone} sm:grid`}>
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                  <Icon className="h-5 w-5" aria-hidden="true" /> 
                 </span>
                 <span>
                   <span className="block font-display text-3xl font-bold leading-none text-fg sm:text-4xl">

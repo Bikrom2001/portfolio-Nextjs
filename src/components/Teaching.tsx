@@ -98,19 +98,35 @@ const teachingRoles: TeachingRole[] = [
     ],
   },
   {
-    title: "Trainer — Web Design",
-    org: "BASIS – SEIP Project",
-    period: "Oct 2022 – Dec 2023",
+    title: "Trainer — Web Application Development",
+    org: "BASIS Institute of Technology & Management (BITM) · SEIP",
+    period: "Feb 2024 – Present",
     topicsHeader: "TOPICS TAUGHT",
     topics: [
-      "HTML5",
-      "CSS3",
+      "Web App Development",
+      "BITM-SEIP-Batch-13, 14",
+      "PHP & MySQL",
+      "JavaScript",
+      "HTML5 & CSS3",
+      "Bootstrap",
+      "Hands-on Lab",
+      "Project Mentorship",
+    ],
+  },
+  {
+    title: "Trainer — Web Application Development with PHP",
+    org: "BASIS – SEIP Project",
+    period: "2022 – 2023",
+    topicsHeader: "TOPICS TAUGHT",
+    topics: [
+      "Web App Development",
+      "PHP & MySQL",
+      "SEIP-BASIS Batch-08, 09",
+      "HTML5 & CSS3",
       "Bootstrap",
       "JavaScript",
-      "Basic Networking",
-      "Graphics",
-      "Computer Programming",
-      "Responsive Design",
+      "Dynamic Web Apps",
+      "Hands-on Lab",
     ],
   },
   {
@@ -303,7 +319,7 @@ export default function Teaching() {
         <div className="mb-12 max-w-3xl">
           <div className="mb-3 flex items-center gap-2">
             <span className="font-mono text-xs font-bold tracking-widest text-accent uppercase">
-              05 —— TEACHING & MENTORING
+              06 —— TEACHING & MENTORING
             </span>
           </div>
 
@@ -336,9 +352,22 @@ export default function Teaching() {
                   <div className="grid h-10 w-10 place-items-center rounded-2xl bg-p-violet text-accent-3 transition-transform duration-300 group-hover:scale-105 dark:bg-accent/15 dark:text-accent">
                     <Monitor className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <span className="font-mono text-xs font-medium text-muted">
-                    {role.period}
-                  </span>
+                  {role.period.toLowerCase().includes("present") ? (
+                    <div className="flex flex-wrap items-center justify-end gap-1.5 font-mono text-xs font-medium text-muted">
+                      <span>{role.period.split(/[–—-]\s*present/i)[0]?.trim()} –</span>
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[0.72rem] font-bold text-emerald-600 shadow-[0_0_10px_rgba(16,185,129,0.2)] transition-all duration-300 group-hover:border-emerald-500/50 group-hover:shadow-[0_0_14px_rgba(16,185,129,0.35)] dark:border-emerald-400/35 dark:bg-emerald-400/15 dark:text-emerald-300">
+                        <span className="relative flex h-2 w-2">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400" />
+                        </span>
+                        <span className="tracking-wide">Present</span>
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="font-mono text-xs font-medium text-muted">
+                      {role.period}
+                    </span>
+                  )}
                 </div>
 
                 {/* Role Title & Org */}

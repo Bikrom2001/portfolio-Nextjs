@@ -8,14 +8,23 @@ import { skillGroups } from "@/data/cv";
 
 // Where each skill shows up in the CV, so every claim is grounded.
 const usage: Record<string, string[]> = {
-  Python: ["Web Operation Specialist, Euro Bangla iT", "Trainer, Infosystem Technology Limited", "NSDA Level 4 assessor and certificate holder", "Job Portal and Admission Portal"],
-  Django: ["Job Portal (multi-language, multi-auth)", "University Admission Portal", "Courses at Ostad and The Universal IT"],
+  Python: [
+    "Shutdown App with GUI (Python & Tkinter)",
+    "Covid Death Data Exploration (Pandas, NumPy, Matplotlib)",
+    "School Donation Analysis (4.6M+ records analyzed)",
+    "Web Operation Specialist, Euro Bangla iT",
+    "Trainer, Infosystem Technology Limited",
+    "NSDA Level 4 assessor and certificate holder",
+  ],
+  Django: ["Course trainer at Ostad and The Universal IT", "Django authentication and backend services"],
+  Laravel: ["E-commerce Website – Pixomart", "University Application Site – Applicantor", "Online News Portal – Prime News"],
+  PHP: ["E-commerce Website – Pixomart", "Applicantor & Prime News portals", "Taught in web development training programs"],
   JavaScript: ["Trainer roles at Infosystem, Children's Hope and BASIS–SEIP", "Dynamic data pages at Euro Bangla iT"],
   "React.js": ["Front-end components at Infosystem Technology Limited", "Full Stack Web Development course, Ostad"],
   HTML: ["Taught in every trainer role since 2022", "NSDA Web Design and Development, Level 3"],
   CSS: ["Taught in every trainer role since 2022", "HTML5 & CSS3 Complete Course, Udemy"],
-  Bootstrap: ["Taught at Children's Hope and BASIS–SEIP"],
-  MySQL: ["Query optimization, indexing and caching at Euro Bangla iT"],
+  Bootstrap: ["Pixomart, Applicantor and Prime News responsive UIs", "Taught at Children's Hope and BASIS–SEIP"],
+  MySQL: ["Covid Death Data Exploration with MySQL & Python", "Pixomart, Applicantor & Prime News databases", "Query optimization, indexing and caching at Euro Bangla iT"],
   Git: ["CI/CD pipelines with GitHub Actions, GitLab CI/CD and Jenkins"],
   Arduino: ["Introduction to IoT and Embedded Systems (Coursera)"],
 };

@@ -14,46 +14,83 @@ function PhotoCard() {
   return (
     <div className="relative mx-auto w-full max-w-[20rem] sm:max-w-[23rem]">
       {/* Morphing pastel blob behind the photo */}
-      <div aria-hidden="true" className="blob absolute -inset-6 bg-gradient-brand opacity-25 blur-2xl" />
-      <div aria-hidden="true" className="blob absolute inset-0 translate-x-6 translate-y-6 bg-gradient-brand opacity-90" />
+      <div
+        aria-hidden="true"
+        className="blob absolute -inset-6 bg-gradient-brand opacity-25 blur-2xl"
+      />
+      <div
+        aria-hidden="true"
+        className="blob absolute inset-0 translate-x-6 translate-y-6 bg-gradient-brand opacity-90"
+      />
 
-      <div style={d(0.2)} className="anim-pop relative overflow-hidden rounded-[2.5rem] border-[6px] border-surface bg-surface shadow-[var(--shadow-lg)]">
+      <div
+        style={d(0.2)}
+        className="anim-pop relative overflow-hidden rounded-[2.5rem] border-[6px] border-surface bg-surface shadow-[var(--shadow-lg)]"
+      >
         <div className="relative aspect-[4/5]">
           <Image
-            src="/hero-portrait.jpg"
+            src="/hero-portrait.png"
             alt={`Portrait of ${profile.name}`}
             fill
             priority
             sizes="(min-width: 640px) 360px, 300px"
-            className="object-cover object-[50%_25%]"
+            className="object-cover object-[50%_20%]"
           />
         </div>
       </div>
 
       {/* Sticker cards with facts from the CV */}
-      <div style={d(0.7)} className="anim-pop absolute -left-6 top-[18%] sm:-left-14">
-        <div style={tilt(-4)} className="float-y flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-3.5 py-2.5 shadow-[var(--shadow-lg)]">
+      <div
+        style={d(0.7)}
+        className="anim-pop absolute -left-6 top-[18%] sm:-left-14"
+      >
+        <div
+          style={tilt(-4)}
+          className="float-y flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-3.5 py-2.5 shadow-[var(--shadow-lg)]"
+        >
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-p-mint text-success">
             <BadgeCheck className="h-5 w-5" aria-hidden="true" />
           </span>
           <span className="leading-tight">
-            <span className="block text-[0.82rem] font-bold text-fg">NSDA Certified</span>
-            <span className="block text-[0.72rem] text-muted">Trainer & Assessor</span>
+            <span className="block text-[0.82rem] font-bold text-fg">
+              NSDA Certified
+            </span>
+            <span className="block text-[0.72rem] text-muted">
+              Trainer & Assessor
+            </span>
           </span>
         </div>
       </div>
 
-      <div style={d(0.85)} className="anim-pop absolute -right-4 top-[46%] sm:-right-12">
-        <div style={tilt(5, 1)} className="float-y rounded-2xl border border-border bg-surface px-4 py-3 text-center shadow-[var(--shadow-lg)]">
-          <span className="block font-display text-3xl font-bold leading-none text-gradient">12+</span>
-          <span className="mt-1 block text-[0.72rem] font-medium text-muted">years in IT</span>
+      <div
+        style={d(0.85)}
+        className="anim-pop absolute -right-4 top-[46%] sm:-right-12"
+      >
+        <div
+          style={tilt(5, 1)}
+          className="float-y rounded-2xl border border-border bg-surface px-4 py-3 text-center shadow-[var(--shadow-lg)]"
+        >
+          <span className="block font-display text-3xl font-bold leading-none text-gradient">
+            12+
+          </span>
+          <span className="mt-1 block text-[0.72rem] font-medium text-muted">
+            years in IT
+          </span>
         </div>
       </div>
 
-      <div style={d(1)} className="anim-pop absolute -bottom-5 left-1/2 -translate-x-1/2">
-        <div style={tilt(-2, 2)} className="float-y flex items-center gap-2 whitespace-nowrap rounded-full border border-border bg-surface px-4 py-2 shadow-[var(--shadow-lg)]">
+      <div
+        style={d(1)}
+        className="anim-pop absolute -bottom-5 left-1/2 -translate-x-1/2"
+      >
+        <div
+          style={tilt(-2, 2)}
+          className="float-y flex items-center gap-2 whitespace-nowrap rounded-full border border-border bg-surface px-4 py-2 shadow-[var(--shadow-lg)]"
+        >
           <GraduationCap className="h-4 w-4 text-accent-2" aria-hidden="true" />
-          <span className="text-[0.8rem] font-semibold text-fg">MSc, University of Dhaka</span>
+          <span className="text-[0.8rem] font-semibold text-fg">
+            MSc, University of Dhaka
+          </span>
         </div>
       </div>
     </div>

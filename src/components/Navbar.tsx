@@ -15,20 +15,52 @@ export default function Navbar() {
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 20);
 
-  useEffect(() => {
-    const els = nav.map((n) => document.getElementById(n.id)).filter(Boolean) as HTMLElement[];
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: "-45% 0px -50% 0px" }
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+      // Precise scroll spy for navbar items
+      const targetPos = scrollY + 220;
+
+      const sectionEls = nav
+        .map((item) => {
+          const el = document.getElementById(item.id);
+          if (!el) return null;
+          return {
+            id: item.id,
+            top: el.offsetTop,
+            bottom: el.offsetTop + el.offsetHeight,
+          };
+        })
+        .filter(Boolean) as { id: string; top: number; bottom: number }[];
+
+      // Near page bottom -> activate last item (Contact)
+      if (window.innerHeight + scrollY >= document.body.offsetHeight - 80) {
+        if (sectionEls.length > 0) {
+          setActive(sectionEls[sectionEls.length - 1].id);
+          return;
+        }
+      }
+
+      // Hero / top of page
+      if (scrollY < 180) {
+        setActive("");
+        return;
+      }
+
+      // Check from bottom to top
+      for (let i = sectionEls.length - 1; i >= 0; i--) {
+        const s = sectionEls[i];
+        if (targetPos >= s.top) {
+          setActive(s.id);
+          return;
+        }
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -55,6 +87,7 @@ export default function Navbar() {
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
+                onClick={() => setActive(item.id)}
                 className={`relative isolate block rounded-full px-3.5 py-2 text-[0.92rem] font-medium transition-colors ${
                   active === item.id ? "text-accent-3 font-semibold" : "text-muted hover:text-fg"
                 }`}
@@ -114,7 +147,10 @@ export default function Navbar() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      setActive(item.id);
+                      setOpen(false);
+                    }}
                     className={`block rounded-2xl px-4 py-3 font-display text-lg font-semibold ${
                       active === item.id ? "bg-p-violet text-accent-3" : "text-fg hover:bg-bg-2"
                     }`}

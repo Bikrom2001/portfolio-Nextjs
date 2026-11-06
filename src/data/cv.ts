@@ -35,11 +35,27 @@ export type Role = {
   end: string; // display, "Present" if ongoing
   startYear: number;
   type?: string;
+  location?: string;
   track: RoleTrack;
   points: string[];
+  skills?: string[];
 };
 
 export const experience: Role[] = [
+  {
+    title: "NSDA Assessor",
+    org: "National Skill Development Authority (NSDA)",
+    start: "May 2024",
+    end: "Present",
+    startYear: 2024,
+    type: "Certified Assessor",
+    location: "National Authority, Bangladesh",
+    track: "teaching",
+    points: [
+      "Conduct skill assessments as per the Competency Standard for Web Design and Development for Freelancing (L3), Computer Operation (L3) and Web Application Development with Python (L4).",
+    ],
+    skills: ["CBT&A Level 4", "Python Web App (L4)", "Web Design (L3)", "Computer Operation (L3)", "Competency Standards"],
+  },
   {
     title: "Lead Trainer — Social Media Marketing & Content Moderation",
     org: "Infosystem Technology Limited · BACCO-SICIP Program",
@@ -47,6 +63,7 @@ export const experience: Role[] = [
     end: "Present",
     startYear: 2026,
     type: "Lead Trainer",
+    location: "Dhaka, Bangladesh",
     track: "teaching",
     points: [
       "Conduct training sessions on Social Media Marketing and Content Moderation.",
@@ -54,6 +71,7 @@ export const experience: Role[] = [
       "Train students on social media account management, page setup, and optimization.",
       "Provide feedback and support to help students develop professional skills.",
     ],
+    skills: ["Social Media Marketing", "Content Moderation", "Facebook & Instagram", "LinkedIn & YouTube", "Page Setup & SEO", "BACCO-SICIP"],
   },
   {
     title: "Lead Trainer — Digital Business Operations",
@@ -62,12 +80,14 @@ export const experience: Role[] = [
     end: "Present",
     startYear: 2026,
     type: "Lead Trainer",
+    location: "Dhaka, Bangladesh",
     track: "teaching",
     points: [
       "Provide hands-on training on eCommerce platforms, including WooCommerce, for setting up and managing online businesses.",
       "Train learners on CRM and customer support tools, including Zoho CRM, HubSpot, and Freshdesk.",
       "Introduce business automation and AI-powered workflows using Claude AI, native CRM/ERP automation, Zapier, and Make.",
     ],
+    skills: ["eCommerce", "WooCommerce", "Zoho CRM", "HubSpot", "Freshdesk", "Claude AI Workflows", "Zapier & Make", "Business Automation"],
   },
   {
     title: "Trainer – Web Application Development",
@@ -76,11 +96,13 @@ export const experience: Role[] = [
     end: "Oct 2026",
     startYear: 2026,
     type: "Contractual",
+    location: "Dhaka, Bangladesh",
     track: "teaching",
     points: [
       "Delivered lessons on HTML5, CSS3, JavaScript, Bootstrap, Python and database management.",
       "Demonstrated front-end and back-end development techniques through hands-on projects.",
     ],
+    skills: ["Python", "Database Management", "HTML5 & CSS3", "JavaScript", "Bootstrap", "Full-Stack Projects"],
   },
   {
     title: "Trainer – Web Development",
@@ -89,34 +111,45 @@ export const experience: Role[] = [
     end: "Present",
     startYear: 2025,
     type: "Full time",
+    location: "Dhaka, Bangladesh",
     track: "teaching",
     points: [
       "Mentor trainees on Python fundamentals and object-oriented programming through real-world projects and assignments.",
       "Build dynamic, responsive and user-friendly front-end components with HTML, CSS and JavaScript (React.js, jQuery).",
     ],
+    skills: ["Python OOP", "React.js", "jQuery", "JavaScript", "Responsive Front-End", "Technical Mentoring"],
   },
   {
-    title: "Assessor",
-    org: "National Skill Development Authority (NSDA)",
-    start: "May 2024",
+    title: "Trainer — Web Application Development",
+    org: "BASIS Institute of Technology & Management (BITM) · SEIP Project",
+    start: "Feb 2024",
     end: "Present",
     startYear: 2024,
+    type: "Trainer",
+    location: "Dhaka, Bangladesh",
     track: "teaching",
     points: [
-      "Conduct skill assessments as per the Competency Standard for Web Design and Development for Freelancing (L3), Computer Operation (L3) and Web Application Development with Python (L4).",
+      "Conduct training sessions on Web Application Development for BITM-SEIP Batch 13 and 14.",
+      "Deliver hands-on instruction on HTML5, CSS3, JavaScript, PHP, MySQL, Bootstrap, and backend architecture.",
+      "Mentor trainees through live projects, technical evaluations, and professional freelancing preparation.",
     ],
+    skills: ["Web Application Development", "PHP & MySQL", "JavaScript", "HTML5 & CSS3", "Bootstrap", "BITM-SEIP", "Hands-on Projects"],
   },
   {
-    title: "Trainer – Web Design",
+    title: "Trainer — Web Application Development with PHP",
     org: "BASIS – SEIP Project",
     start: "Oct 2022",
     end: "Dec 2023",
     startYear: 2022,
-    type: "Full time",
+    type: "Trainer",
+    location: "Dhaka, Bangladesh",
     track: "teaching",
     points: [
-      "Taught HTML, CSS, Bootstrap and JavaScript, along with basic networking, graphics and computer programming.",
+      "Conducted training sessions on Web Application Development with PHP for SEIP-BASIS Batch-08 and 09.",
+      "Delivered hands-on lessons on PHP, MySQL, HTML5, CSS3, JavaScript, Bootstrap, along with computer programming fundamentals.",
+      "Mentored students on practical web project development and industry skill competency standards.",
     ],
+    skills: ["PHP & MySQL", "Web Application Development", "SEIP-BASIS Batch 08, 09", "HTML5 & CSS3", "Bootstrap", "JavaScript"],
   },
   {
     title: "Web Operation Specialist",
@@ -125,6 +158,7 @@ export const experience: Role[] = [
     end: "Present",
     startYear: 2021,
     type: "Remote",
+    location: "Remote",
     track: "development",
     points: [
       "Conceptualize, create and manage dynamic web pages for data display using HTML, CSS, JavaScript and Python.",
@@ -132,6 +166,7 @@ export const experience: Role[] = [
       "Write unit and integration tests with PyTest.",
       "Set up and manage CI/CD pipelines for automated testing and deployment with GitHub Actions, GitLab CI/CD and Jenkins.",
     ],
+    skills: ["Python", "JavaScript", "MySQL Optimization", "PyTest", "CI/CD Pipelines", "GitHub Actions", "Jenkins"],
   },
   {
     title: "Teaching Assistant",
@@ -140,10 +175,12 @@ export const experience: Role[] = [
     end: "Apr 2020",
     startYear: 2019,
     type: "Full time",
+    location: "Dhaka, Bangladesh",
     track: "teaching",
     points: [
       "Demonstrated the curriculum and activities of the physics courses PHY 110 and PHY 111.",
     ],
+    skills: ["Physics Curriculum", "PHY 110 & 111", "Lab Demonstrations", "Academic Mentorship"],
   },
   {
     title: "IT Officer",
@@ -152,8 +189,10 @@ export const experience: Role[] = [
     end: "Aug 2019",
     startYear: 2014,
     type: "Full time",
+    location: "Dhaka, Bangladesh",
     track: "development",
     points: ["Maintained and monitored computer systems and networks."],
+    skills: ["Systems Administration", "Network Infrastructure", "System Monitoring", "Hardware Support"],
   },
 ];
 
@@ -182,28 +221,108 @@ export const engagements = [
 
 export const projects = [
   {
-    name: "Job Portal",
+    name: "University Application Site – Applicantor",
     summary:
-      "A multilingual job portal where job seekers manage their profiles, authors publish news, and candidates get job alerts by email.",
-    stack: ["Django", "PostgreSQL", "Ajax", "Multi-language"],
+      "A dynamic university application portal built with Laravel that provides an online platform for prospective students to explore application opportunities and submit their university admission applications.",
+    stack: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
+    image: "/applicantor-portal.jpg",
+    github: "https://github.com/PriyankaDewan06",
+    live: "https://applicationportal.priyankaddewan.com/",
     features: [
-      "Complete multi-language system built in Django",
-      "Single and multi auth system with guards",
-      "Job seekers update their own photo, information and password",
-      "Authors create, edit and delete news posts",
-      "Job alert emails sent with Ajax, plus email verification",
+      "Online university application platform",
+      "Student application submission system",
+      "Application form management",
+      "Dynamic content management",
+      "User-friendly application interface",
+      "Responsive design for desktop and mobile devices",
+      "Streamlined online admission application process",
     ],
   },
   {
-    name: "University Admission Portal",
+    name: "E-commerce Website – Pixomart",
     summary:
-      "An online admission portal where applicants create a profile, upload their documents and contact the admissions office.",
-    stack: ["Django", "Auth guards", "File uploads", "SMTP"],
+      "A dynamic e-commerce website built with Laravel that provides an online shopping experience where customers can explore products, manage their shopping carts, and place orders through a user-friendly interface.",
+    stack: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
+    image: "/pixomart-ecommerce.jpg",
+    github: "https://github.com/PriyankaDewan06",
+    live: "https://ecommerceproject.priyankaddewan.com/",
     features: [
-      "Single and multi auth system with guards",
-      "Applicant profile creation and document upload",
-      "Configurable site logo, favicon and branding",
-      "Contact form that sends email to the admissions team",
+      "Dynamic e-commerce website",
+      "Product listing and category management",
+      "Product details and search functionality",
+      "Shopping cart management",
+      "Customer order placement system",
+      "User registration and authentication",
+      "Order management functionality",
+      "Responsive design for desktop and mobile devices",
+      "Database-driven product and customer management",
+    ],
+  },
+  {
+    name: "Online News Portal – Prime News",
+    summary:
+      "A dynamic online news portal built with Laravel that allows users to explore the latest news, browse news by categories, and access articles across different sections through a responsive interface.",
+    stack: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
+    image: "/prime-news-portal.jpg",
+    github: "https://github.com/PriyankaDewan06",
+    live: "https://newsportalproject.priyankaddewan.com/",
+    features: [
+      "Dynamic online news publishing platform",
+      "Category-based news browsing system",
+      "Latest and popular news sections",
+      "Detailed news article pages",
+      "News search and navigation functionality",
+      "Responsive design for desktop and mobile devices",
+      "Structured news content management",
+    ],
+  },
+  {
+    name: "School Donation Analysis",
+    summary:
+      "A Python-based data analysis project that explores over 4.6 million school donation records to identify donation trends, analyze teacher and school department data, and visualize insights across different US states.",
+    stack: ["Python", "Pandas", "NumPy", "Matplotlib", "Plotly", "Cufflinks"],
+    image: "/school-donation-analysis.jpg",
+    github: "https://github.com/PriyankaDewan06/donation-analysis",
+    features: [
+      "Analyzes over 4.6 million school donation records",
+      "Uses Pandas and NumPy for data cleaning and manipulation",
+      "Explores school departments and teacher donation activities",
+      "Analyzes donation projects across different US states",
+      "Creates interactive data visualizations using Plotly and Cufflinks",
+      "Uses Matplotlib and Pyplot to visualize analytical results",
+      "Performs date and time-based data analysis",
+    ],
+  },
+  {
+    name: "Covid Death Data Exploration",
+    summary:
+      "A Python-based data exploration project focused on analyzing COVID-19 death statistics to identify trends, examine pandemic impacts, and extract meaningful insights through data analysis.",
+    stack: ["Python", "Pandas", "NumPy", "Matplotlib", "Jupyter Notebook", "MySQL"],
+    image: "/covid-death-data-exploration.png",
+    github: "https://github.com/PriyankaDewan06/Data-Exploration",
+    features: [
+      "COVID-19 death data exploration",
+      "Data cleaning and preprocessing",
+      "Statistical data analysis",
+      "Exploration of death statistics and trends",
+      "Data filtering and aggregation",
+      "Data visualization and analytical insights",
+    ],
+  },
+  {
+    name: "Shutdown App with GUI",
+    summary:
+      "A Python-based desktop application with a graphical user interface (GUI) that allows users to easily manage computer power operations, including shutdown, restart, and related system controls.",
+    stack: ["Python", "Tkinter", "OS Module", "Desktop GUI"],
+    image: "/shutdown-app-gui.jpg",
+    github: "https://github.com/PriyankaDewan06/Python-Projects",
+    features: [
+      "User-friendly graphical interface",
+      "Computer shutdown functionality",
+      "System restart functionality",
+      "Easy-to-use control buttons",
+      "GUI-based system operation management",
+      "Simple and interactive desktop application",
     ],
   },
 ];
@@ -261,10 +380,10 @@ export const affiliations = [
 export const nav = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "teaching", label: "Teaching" },
   { id: "classroom", label: "Classroom" },
-  { id: "skills", label: "Skills" },
+  { id: "teaching", label: "Teaching" },
   { id: "credentials", label: "Credentials" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ];

@@ -28,12 +28,12 @@ export default function Home() {
         <Stats />
         <About />
         <Experience />
-        <Projects />
-        <Teaching />
         <Classroom />
+        <Teaching />
+        <Credentials />
+        <Projects />
         <Skills />
         <Playground />
-        <Credentials />
       </main>
       <Contact />
       <Footer />
