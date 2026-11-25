@@ -115,28 +115,28 @@ export default function Contact() {
               </div>
             </div>
 
-            <form onSubmit={onSubmit} className="reveal glass relative overflow-hidden p-5 sm:p-8">
+            <form onSubmit={onSubmit} className="reveal glass relative overflow-hidden p-5 sm:p-8" data-lpignore="true" suppressHydrationWarning>
               <div aria-hidden="true" className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-p-violet blur-2xl" />
               <p className="relative font-display text-lg sm:text-xl font-bold text-fg">Send a message</p>
               <p className="relative mt-1 text-[0.82rem] sm:text-[0.88rem] text-muted">This opens a ready-to-send email in your mail app.</p>
-              <div className="relative mt-6 grid gap-4 sm:grid-cols-2">
-                <div>
+              <div className="relative mt-6 grid gap-4 sm:grid-cols-2" suppressHydrationWarning>
+                <div suppressHydrationWarning>
                   <label htmlFor="c-name" className="mb-1.5 block text-[0.85rem] font-medium text-fg-soft">
                     Name
                   </label>
-                  <input id="c-name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={field} autoComplete="name" placeholder="Your name" />
+                  <input id="c-name" data-lpignore="true" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={field} autoComplete="name" placeholder="Your name" />
                 </div>
-                <div>
+                <div suppressHydrationWarning>
                   <label htmlFor="c-email" className="mb-1.5 block text-[0.85rem] font-medium text-fg-soft">
                     Email
                   </label>
-                  <input id="c-email" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={field} autoComplete="email" placeholder="you@example.com" />
+                  <input id="c-email" data-lpignore="true" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={field} autoComplete="email" placeholder="you@example.com" />
                 </div>
-                <div className="sm:col-span-2">
+                <div className="sm:col-span-2" suppressHydrationWarning>
                   <label htmlFor="c-subject" className="mb-1.5 block text-[0.85rem] font-medium text-fg-soft">
                     Subject
                   </label>
-                  <input id="c-subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className={field} placeholder="Job opportunity, training session…" />
+                  <input id="c-subject" data-lpignore="true" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className={field} placeholder="Job opportunity, training session…" />
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="c-msg" className="mb-1.5 block text-[0.85rem] font-medium text-fg-soft">

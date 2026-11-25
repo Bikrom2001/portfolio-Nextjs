@@ -83,7 +83,7 @@ export const experience: Role[] = [
     location: "Dhaka, Bangladesh",
     track: "teaching",
     points: [
-      "Provide hands-on training on eCommerce platforms, including WooCommerce, for setting up and managing online businesses.",
+      "Provide hands-on training on eCommerce platforms, including WooCommerce, for setting up and managing online businesses across DBO Batch 01 & 02.",
       "Train learners on CRM and customer support tools, including Zoho CRM, HubSpot, and Freshdesk.",
       "Introduce business automation and AI-powered workflows using Claude AI, native CRM/ERP automation, Zapier, and Make.",
     ],

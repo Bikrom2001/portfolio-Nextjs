@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-screen w-full overflow-x-hidden antialiased">{children}</body>
+      <body suppressHydrationWarning className="min-h-screen w-full overflow-x-hidden antialiased">{children}</body>
     </html>
   );
 }
